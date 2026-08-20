@@ -19,7 +19,7 @@ class MaxHeap(vararg elements:Int){
     
     fun sort(){
         for(i in totalSize-1 downTo 0 ){
-            swap(array[0],array[i])
+            swap(0,i)
             heapify(i)
         }
         printIt()
