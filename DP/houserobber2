@@ -1,0 +1,21 @@
+fun main() {
+    val houses = arrayOf(7,3,2,8,2,1,10)
+    val ans = maxOf(rob(0,houses.size-2,houses),rob(1,houses.size-1,houses))
+    print(ans)
+}
+
+
+fun rob(start:Int, end:Int, houses:Array<Int>):Int{
+    if(start>end){
+        return 0
+    }
+
+    if(start==end){
+        return houses[start]
+    }
+
+    return maxOf(
+        houses[start]+rob(start+2,end,houses),
+        rob(start+1,end,houses)
+        )
+}
